@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "hardhat test"
+    "test": "hardhat test",
+    "hook:pre-push": "tsc --noEmit && cspell lint --dot --gitignore '**/{*,''}{.,''}*' && prettier '**/{*,''}.{json,js,ts,sol}' --check && solhint 'contracts/*.sol' && eslint '**/{*,''}.{json,js,ts}'"
   },
   "license": "Apache-2.0",
   "husky": {
