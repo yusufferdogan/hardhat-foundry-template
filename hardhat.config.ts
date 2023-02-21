@@ -5,6 +5,7 @@ import "hardhat-preprocessor";
 import { HardhatUserConfig, task } from "hardhat/config";
 
 import example from "./tasks/example";
+import "@nomicfoundation/hardhat-foundry";
 
 function getRemappings() {
   return fs
