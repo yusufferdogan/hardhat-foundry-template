@@ -27,13 +27,45 @@ const config: HardhatUserConfig = {
       },
     },
   },
+  docgen: {
+    path: './docs',
+    clear: true,
+    runOnCompile: false,
+  },
+  contractSizer: {
+    runOnCompile: false,
+    strict: true,
+  },
+  spdxLicenseIdentifier: {
+    runOnCompile: false,
+  },
+  gasReporter: {
+    enabled: true,
+    coinmarketcap: process.env.COINMARKETCAP_API_KEY || '',
+    gasPriceApi:
+      'https://api.etherscan.io/api?module=proxy&action=eth_gasPrice',
+    token: 'ETH',
+    currency: 'USD',
+  },
+  networks: {
+    goerli: {
+      url: process.env.GOERLI_URL,
+      accounts: [`0x${process.env.DEPLOYER_WALLET_PRIVATE_KEY}`],
+      chainId: 5,
+    },
+  },
+  etherscan: {
+    apiKey: {
+      goerli: process.env.ETHERSCAN_API_KEY || '',
+    },
+  },
   paths: {
-    sources: "./src", // Use ./src rather than ./contracts as Hardhat expects
+    sources: "src", // Use ./src rather than ./contracts as Hardhat expects
     cache: "./cache_hardhat", // Use a different cache for Hardhat than Foundry
   },
   // This fully resolves paths for imports in the ./lib directory for Hardhat
   preprocess: {
-    eachLine: (hre) => ({
+    eachLine: (hre:any) => ({
       transform: (line: string) => {
         if (line.match(/^\s*import /i)) {
           getRemappings().forEach(([find, replace]) => {
