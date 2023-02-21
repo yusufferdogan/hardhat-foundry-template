@@ -7,15 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "hardhat test",
-    "hook:pre-push": "tsc --noEmit && cspell lint --dot --gitignore '**/{*,''}{.,''}*' && prettier '**/{*,''}.{json,js,ts,sol}' --check && solhint 'contracts/*.sol' && eslint '**/{*,''}.{json,js,ts}'"
+    "test": "hardhat test"
   },
   "license": "Apache-2.0",
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn run hook:pre-push"
-    }
-  },
   "devDependencies": {
     "@nomicfoundation/hardhat-foundry": "^1.0.0",
     "@nomiclabs/hardhat-ethers": "^2.2.2",
