@@ -1,4 +1,5 @@
-import { HardhatRuntimeEnvironment } from "hardhat/types/runtime";
+/* eslint-disable node/no-unpublished-import */
+import { HardhatRuntimeEnvironment } from 'hardhat/types/runtime';
 
 export default async function example(
   params: any,
