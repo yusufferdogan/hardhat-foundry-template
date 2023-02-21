@@ -1,13 +1,13 @@
 import fs from 'fs';
 import * as dotenv from 'dotenv';
 
-import '@nomiclabs/hardhat-waffle';
+import '@nomicfoundation/hardhat-foundry';
+import '@nomicfoundation/hardhat-toolbox';
 import '@typechain/hardhat';
 import 'hardhat-preprocessor';
-import { HardhatUserConfig, task } from 'hardhat/config';
+import { HardhatUserConfig } from 'hardhat/config';
+// import { HardhatUserConfig, task } from 'hardhat/config';
 
-import example from './tasks/example';
-import '@nomicfoundation/hardhat-foundry';
 dotenv.config();
 
 function getRemappings() {
@@ -18,7 +18,7 @@ function getRemappings() {
     .map((line) => line.trim().split('='));
 }
 
-task('example', 'Example task').setAction(example);
+// task('example', 'Example task').setAction(example);
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -55,20 +55,21 @@ const config: HardhatUserConfig = {
     cache: './cache_hardhat', // Use a different cache for Hardhat than Foundry
   },
   // This fully resolves paths for imports in the ./lib directory for Hardhat
-  // preprocess: {
-  //   eachLine: (hre: any) => ({
-  //     transform: (line: string) => {
-  //       if (line.match(/^\s*import /i)) {
-  //         getRemappings().forEach(([find, replace]) => {
-  //           if (line.match(find)) {
-  //             line = line.replace(find, replace);
-  //           }
-  //         });
-  //       }
-  //       return line;
-  //     },
-  //   }),
-  // },
+  preprocess: {
+    eachLine: (hre: any) => ({
+      transform: (line: string) => {
+        hre;
+        if (line.match(/^\s*import /i)) {
+          getRemappings().forEach(([find, replace]) => {
+            if (line.match(find)) {
+              line = line.replace(find, replace);
+            }
+          });
+        }
+        return line;
+      },
+    }),
+  },
 };
 
 export default config;
