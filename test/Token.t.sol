@@ -9,7 +9,7 @@ contract TokenTest is Test {
     Token t;
 
     function setUp() public {
-        t = new Token();
+        t = new Token(100000000000);
     }
 
     function testName() public {

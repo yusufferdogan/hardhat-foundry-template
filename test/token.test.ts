@@ -4,7 +4,7 @@ import { ethers } from 'hardhat';
 describe('Token', function () {
   it('Should return name Token', async function () {
     const Token = await ethers.getContractFactory('Token');
-    const token = await Token.deploy();
+    const token = await Token.deploy(10000000);
     await token.deployed();
 
     expect(await token.name()).to.equal('Token');
