@@ -39,7 +39,7 @@ npx hardhat example
 - Install libraries with Foundry which work with Hardhat.
 
 ```bash
-forge install rari-capital/solmate # Already in this repo, just an example
+forge install OpenZeppelin/openzeppelin-contracts
 ```
 
 ## Myhtril
