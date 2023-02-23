@@ -25,7 +25,7 @@ module.exports = {
     'ipfs',
     'mload',
     'FERC',
-    'nomicfoundation'
+    'nomicfoundation',
   ],
 
   ignoreWords: [],

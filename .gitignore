@@ -28,9 +28,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Hardhat files
-artifacts
-
 # Auto-generated files
 soldata
 docs
