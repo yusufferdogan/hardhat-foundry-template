@@ -9,14 +9,10 @@ import "forge-std/console.sol";
 contract Foo721 is ERC721, Ownable {
     uint256 public tokenCount;
 
-    uint256 public constant MAX_SUPPLY = 100;
-    uint256 public constant FREE_MINT_COUNT = 5;
-    uint256 public constant MINT_PRICE = 0.001 ether;
+    uint256 public constant MAX_SUPPLY = 2;
+    uint256 public constant MINT_PRICE = 1 ether;
     // solhint-disable-next-line var-name-mixedcase
     uint256 public immutable MINT_DATE;
-
-    mapping(address => bool) public freeMinted;
-
     string public baseURI;
 
     error InsufficientFunds();
@@ -31,7 +27,6 @@ contract Foo721 is ERC721, Ownable {
     }
 
     function setBaseURI(string memory baseURI_) external onlyOwner {
-        console.log(msg.sender);
         baseURI = baseURI_;
     }
 
@@ -43,13 +38,11 @@ contract Foo721 is ERC721, Ownable {
         // solhint-disable-next-line not-rely-on-time
         if (block.timestamp < MINT_DATE) revert InvalidDate();
 
-        if (tokenCount + 1 > MAX_SUPPLY) revert MaxSupplyExceeded();
-
         if (msg.value < MINT_PRICE) revert InsufficientFunds();
 
-        tokenCount++;
+        if (tokenCount + 1 > MAX_SUPPLY) revert MaxSupplyExceeded();
 
-        _safeMint(to, tokenCount);
+        _mint(to, tokenCount++);
     }
 
     function withdraw() external onlyOwner {
