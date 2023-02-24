@@ -44,13 +44,13 @@ forge install OpenZeppelin/openzeppelin-contracts
 
 ## Myhtril
 
-install =>
+install ➡️
 
 ```bash
  pip3 install mythril
 ```
 
-use =>
+use ➡️
 
 ```bash
  myth analyze contracts/Foo721.sol --solc-json mythril.config.json
@@ -58,13 +58,13 @@ use =>
 
 ## Slither
 
-install =>
+install ➡️
 
 ```bash
  pip3 install slither-analyzer
 ```
 
-use =>
+use ➡️
 
 ```bash
  slither contracts/Foo721.sol
