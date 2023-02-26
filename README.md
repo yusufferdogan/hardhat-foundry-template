@@ -30,6 +30,12 @@ forge test
 npx hardhat test
 ```
 
+- Foundry run single test
+
+```bash
+  forge test --match-path test/Foo721.t.sol
+```
+
 - Use Hardhat's task framework
 
 ```bash
@@ -39,6 +45,7 @@ npx hardhat example
 - Install libraries with Foundry which work with Hardhat.
 
 ```bash
+forge install foundry-rs/forge-std
 forge install OpenZeppelin/openzeppelin-contracts
 ```
 
