@@ -51,13 +51,13 @@ contract Foo721Test is Test {
     }
 
     function testMintPrice() public {
-        vm.warp(11);
+        skip(10);
         vm.expectRevert(Foo721.InsufficientFunds.selector);
         t.mint(address(this));
     }
 
     function testMaxSupply(address addr) public {
-        vm.warp(11);
+        skip(10);
         uint256 supply = t.MAX_SUPPLY();
         for (uint i = 0; i < supply; i++) {
             address minter = address(uint160(0xabc << i));
@@ -70,7 +70,7 @@ contract Foo721Test is Test {
     }
 
     function testMint() public {
-        vm.warp(11);
+        skip(10);
         assertEq(t.balanceOf(address(this)), 0);
         vm.expectEmit(true, true, true, true);
         emit Transfer(address(0), address(this), 0);
@@ -80,7 +80,7 @@ contract Foo721Test is Test {
 
     function testWithdraw() public {
         uint256 beforeBalance = address(this).balance;
-        vm.warp(11);
+        skip(10);
         uint256 supply = t.MAX_SUPPLY();
         for (uint i = 0; i < supply; i++) {
             address minter = address(uint160(0xabc << i));
