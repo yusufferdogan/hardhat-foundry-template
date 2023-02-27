@@ -5,7 +5,17 @@ import '@nomicfoundation/hardhat-foundry';
 import '@nomicfoundation/hardhat-toolbox';
 import '@typechain/hardhat';
 import 'hardhat-preprocessor';
+import 'solidity-coverage';
 import { HardhatUserConfig } from 'hardhat/config';
+import '@nomiclabs/hardhat-etherscan';
+import 'hardhat-gas-reporter';
+import 'hardhat-contract-sizer';
+import 'hardhat-docgen';
+import 'hardhat-tracer';
+import 'hardhat-spdx-license-identifier';
+import '@nomicfoundation/hardhat-chai-matchers';
+import '@nomiclabs/hardhat-ethers';
+
 // import { HardhatUserConfig, task } from 'hardhat/config';
 
 dotenv.config();

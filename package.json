@@ -26,7 +26,7 @@
     "chai": "^4.3.7",
     "ethereum-waffle": "^3.4.4",
     "ethers": "^5.7.2",
-    "hardhat": "^2.9.5",
+    "hardhat": "^2.12.7",
     "hardhat-gas-reporter": "^1.0.9",
     "hardhat-preprocessor": "^0.1.4",
     "solidity-coverage": "^0.8.2",
