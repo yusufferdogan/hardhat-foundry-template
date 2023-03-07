@@ -1,20 +1,22 @@
 import fs from 'fs';
 import * as dotenv from 'dotenv';
-
-import '@nomicfoundation/hardhat-foundry';
-import '@nomicfoundation/hardhat-toolbox';
-import '@typechain/hardhat';
-import 'hardhat-preprocessor';
-import 'solidity-coverage';
 import { HardhatUserConfig } from 'hardhat/config';
+import '@nomicfoundation/hardhat-foundry';
+import 'hardhat-preprocessor';
+//--------------------------------------------
 import '@nomiclabs/hardhat-etherscan';
+import '@typechain/hardhat';
 import 'hardhat-gas-reporter';
 import 'hardhat-contract-sizer';
+import 'solidity-coverage';
 import 'hardhat-docgen';
 import 'hardhat-tracer';
 import 'hardhat-spdx-license-identifier';
+import '@tenderly/hardhat-tenderly';
 import '@nomicfoundation/hardhat-chai-matchers';
 import '@nomiclabs/hardhat-ethers';
+import 'hardhat-storage-layout';
+import 'hardhat-finder';
 
 // import { HardhatUserConfig, task } from 'hardhat/config';
 
@@ -50,7 +52,7 @@ const config: HardhatUserConfig = {
   },
   networks: {
     goerli: {
-      url: process.env.GOERLI_URL,
+      url: String(process.env.GOERLI_URL),
       accounts: [`0x${process.env.DEPLOYER_WALLET_PRIVATE_KEY}`],
       chainId: 5,
     },

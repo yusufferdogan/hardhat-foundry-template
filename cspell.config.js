@@ -26,6 +26,7 @@ module.exports = {
     'mload',
     'FERC',
     'nomicfoundation',
+    'foundryup',
   ],
 
   ignoreWords: [],

@@ -2,9 +2,8 @@
 
 pragma solidity 0.8.13;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "forge-std/console.sol";
+import "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
+import "lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 
 contract Foo721 is ERC721, Ownable {
     uint256 public tokenCount;

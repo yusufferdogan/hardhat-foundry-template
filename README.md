@@ -89,4 +89,4 @@ Whenever you install new libraries using Foundry, make sure to update your `rema
 
 ### TODO
 
-- [ ] Fix hardhat coverage
+- [x] Fix hardhat coverage
