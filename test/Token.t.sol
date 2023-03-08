@@ -15,4 +15,8 @@ contract TokenTest is Test {
     function testName() public {
         assertEq(t.name(), "Token");
     }
+
+    function testDecimal() public {
+        assertEq(t.decimals(), 1);
+    }
 }
