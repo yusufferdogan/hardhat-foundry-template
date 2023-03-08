@@ -2,5 +2,7 @@
 src = 'contracts'
 out = 'out'
 libs = ['lib']
+cache = true
+cache_path = 'foundry_cache'
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
