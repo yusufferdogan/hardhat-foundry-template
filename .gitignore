@@ -6,7 +6,8 @@ out/
 node_modules/
 
 #Hardhat files
-cache_hardhat/
+cache/
+foundry_cache/
 artifacts/
 
 #Hardhat plugin files
