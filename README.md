@@ -6,6 +6,12 @@
 
 ### Getting Started
 
+- Prepare
+
+```bash
+yarn run prepare
+```
+
 - Use Foundry:
 
 ```bash
