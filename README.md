@@ -67,6 +67,7 @@ install ➡️
 
 ```bash
  pip3 install mythril
+ PATH+=":$HOME/.local/bin/"
 ```
 
 use ➡️
@@ -81,6 +82,7 @@ install ➡️
 
 ```bash
  pip3 install slither-analyzer
+ PATH+=":$HOME/.local/bin/"
 ```
 
 use ➡️
