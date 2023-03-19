@@ -7,8 +7,10 @@ node_modules/
 
 #Hardhat files
 cache/
-foundry_cache/
 artifacts/
+
+#Foundry files
+foundry_cache
 
 #Hardhat plugin files
 typechain-types/
