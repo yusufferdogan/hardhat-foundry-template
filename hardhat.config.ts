@@ -6,15 +6,14 @@ import 'hardhat-preprocessor';
 //--------------------------------------------
 import '@nomiclabs/hardhat-etherscan';
 import '@typechain/hardhat';
+import '@nomiclabs/hardhat-ethers';
+import 'solidity-coverage';
 import 'hardhat-gas-reporter';
 import 'hardhat-contract-sizer';
-import 'solidity-coverage';
 import 'hardhat-docgen';
 import 'hardhat-tracer';
 import 'hardhat-spdx-license-identifier';
-import '@tenderly/hardhat-tenderly';
 import '@nomicfoundation/hardhat-chai-matchers';
-import '@nomiclabs/hardhat-ethers';
 import 'hardhat-storage-layout';
 import 'hardhat-finder';
 
