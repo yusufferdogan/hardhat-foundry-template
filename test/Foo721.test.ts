@@ -88,4 +88,16 @@ describe(name, () => {
     );
     await ethers.provider.send('evm_increaseTime', [-1000]);
   });
+
+  it('get base uri', async () => {
+    await ethers.provider.send('evm_increaseTime', [1000]);
+
+    await contract.mint(addresses[5].address, {
+      value: String(MINT_PRICE),
+    });
+
+    await contract.setBaseURI('asd/');
+    const tokenUri = await contract.tokenURI(0);
+    assert.equal('asd/0', tokenUri);
+  });
 });
