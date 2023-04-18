@@ -8,13 +8,12 @@
   },
   "scripts": {
     "test": "hardhat test",
-    "coverage": "rm -r coverage || true && rm -r coverage.json || true && forge coverage --report lcov",
-    "h-coverage": "rm lcov.info || true && hardhat coverage",
+    "fcoverage": "rm -r coverage || true && rm -r coverage.json || true && forge coverage --report lcov",
+    "hcoverage": "rm lcov.info || true && hardhat coverage",
     "prepare": "foundryup && forge install && forge install foundry-rs/forge-std && forge install OpenZeppelin/openzeppelin-contracts"
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@nomicfoundation/hardhat-foundry": "^1.0.0",
     "hardhat-preprocessor": "^0.1.4",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.2",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.3",

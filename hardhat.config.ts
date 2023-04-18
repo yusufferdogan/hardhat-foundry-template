@@ -1,7 +1,6 @@
 import fs from 'fs';
 import * as dotenv from 'dotenv';
 import { HardhatUserConfig } from 'hardhat/config';
-import '@nomicfoundation/hardhat-foundry';
 import 'hardhat-preprocessor';
 //--------------------------------------------
 import '@nomiclabs/hardhat-etherscan';
@@ -10,14 +9,14 @@ import 'hardhat-gas-reporter';
 import 'hardhat-contract-sizer';
 import 'solidity-coverage';
 import 'hardhat-docgen';
-import 'hardhat-tracer';
 import 'hardhat-spdx-license-identifier';
-import '@tenderly/hardhat-tenderly';
 import '@nomicfoundation/hardhat-chai-matchers';
 import '@nomiclabs/hardhat-ethers';
-import 'hardhat-storage-layout';
-import 'hardhat-finder';
 
+// import '@tenderly/hardhat-tenderly';
+// import 'hardhat-tracer';
+// import 'hardhat-storage-layout';
+// import 'hardhat-finder';
 // import { HardhatUserConfig, task } from 'hardhat/config';
 
 dotenv.config();

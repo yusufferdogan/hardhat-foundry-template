@@ -27,6 +27,7 @@ module.exports = {
     'FERC',
     'nomicfoundation',
     'foundryup',
+    'hcoverage',
   ],
 
   ignoreWords: [],
