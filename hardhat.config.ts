@@ -20,7 +20,6 @@ import '@nomicfoundation/hardhat-chai-matchers';
 // import { HardhatUserConfig, task } from 'hardhat/config';
 
 dotenv.config();
-
 function getRemappings() {
   return fs
     .readFileSync('remappings.txt', 'utf8')
@@ -55,10 +54,29 @@ const config: HardhatUserConfig = {
       accounts: [`0x${process.env.DEPLOYER_WALLET_PRIVATE_KEY}`],
       chainId: 5,
     },
+    avalancheFujiTestnet: {
+      url: process.env.AVALANCHE_FUJI_TESTNET_RPC_URL || '',
+      accounts: [`0x${process.env.DEPLOYER_WALLET_PRIVATE_KEY}`],
+    },
+    bscTestnet: {
+      url: process.env.BSC_TESTNET_RPC_URL || '',
+      accounts: [`0x${process.env.DEPLOYER_WALLET_PRIVATE_KEY}`],
+    },
+    arbitrumTestnet: {
+      url: process.env.ARBITRUM_TESTNET_RPC_URL || '',
+      accounts: [`0x${process.env.DEPLOYER_WALLET_PRIVATE_KEY}`],
+    },
   },
   etherscan: {
     apiKey: {
       goerli: process.env.ETHERSCAN_API_KEY || '',
+      arbitrumTestnet: process.env.ARBISCAN_API_KEY || '',
+      auroraTestnet: process.env.AURORA_API_KEY || '',
+      avalancheFujiTestnet: process.env.SNOWTRACE_API_KEY || '',
+      bscTestnet: process.env.BSCSCAN_API_KEY || '',
+      ftmTestnet: process.env.FTMSCAN_API_KEY || '',
+      harmonyTest: process.env.HARMONY_POPS_API_KEY || '',
+      polygonMumbai: process.env.POLYGONSCAN_API_KEY || '',
     },
   },
   paths: {
