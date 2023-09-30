@@ -107,4 +107,3 @@ Whenever you install new libraries using Foundry, make sure to update your `rema
 - [x] Fix hardhat coverage
 
 ![image](https://user-images.githubusercontent.com/45846424/225307686-0a0e37ff-1cb9-419a-bc2d-f92bbebd4871.png)
-
