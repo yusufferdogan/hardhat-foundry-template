@@ -48,6 +48,13 @@ forge coverage --report lcov
   forge test --match-path test/Foo721.t.sol
 ```
 
+- Foundry run script deploy
+
+```bash
+source .env
+forge script script/deploy.s.sol --rpc-url $GOERLI_RPC_URL --verify --via-ir --broadcast
+```
+
 - Use Hardhat's task framework
 
 ```bash
