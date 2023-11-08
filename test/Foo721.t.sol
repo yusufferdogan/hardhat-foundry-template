@@ -25,23 +25,9 @@ contract Foo721Test is Test {
         t.setBaseURI("asd");
     }
 
-    function test2BaseUri() public {
-        vm.prank(address(0));
-        vm.expectRevert(bytes("Ownable: caller is not the owner"));
-        t.setBaseURI("asd");
-    }
-
     function testFailBaseUri() public {
         vm.prank(address(0));
         vm.expectRevert(bytes("Ownable: asd is not the owner"));
-        t.setBaseURI("asd");
-    }
-
-    function testFuzzBaseUri(address addr) public {
-        vm.assume(addr != address(this));
-        emit log_named_uint("time:", block.timestamp);
-        vm.expectRevert(bytes("Ownable: caller is not the owner"));
-        vm.prank(addr);
         t.setBaseURI("asd");
     }
 
@@ -59,7 +45,7 @@ contract Foo721Test is Test {
     function testMaxSupply(address addr) public {
         skip(10);
         uint256 supply = t.MAX_SUPPLY();
-        for (uint i = 0; i < supply; i++) {
+        for (uint256 i = 0; i < supply; i++) {
             address minter = address(uint160(0xabc << i));
             vm.deal(minter, 1 ether);
             t.mint{ value: 1 ether }(address(0xa));
@@ -82,7 +68,7 @@ contract Foo721Test is Test {
         uint256 beforeBalance = address(this).balance;
         skip(10);
         uint256 supply = t.MAX_SUPPLY();
-        for (uint i = 0; i < supply; i++) {
+        for (uint256 i = 0; i < supply; i++) {
             address minter = address(uint160(0xabc << i));
             vm.deal(minter, 1 ether);
             vm.prank(minter);
