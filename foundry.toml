@@ -4,6 +4,7 @@ out = 'out'
 libs = ['lib']
 cache = true
 cache_path = 'foundry_cache'
+solc_version = '0.8.20'
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
 

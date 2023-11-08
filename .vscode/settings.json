@@ -84,5 +84,8 @@
       }
     ]
   },
-  "hardhat.telemetry": false
+  "hardhat.telemetry": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

@@ -21,7 +21,10 @@ contract Foo721 is ERC721, Ownable {
     error TransferTxError();
     error InvalidDate();
 
-    constructor(uint256 _mintDate) ERC721("FooNFT", "F_NFT") {
+    constructor(uint256 _mintDate)
+        Ownable(msg.sender)
+        ERC721("FooNFT", "F_NFT")
+    {
         MINT_DATE = _mintDate;
     }
 

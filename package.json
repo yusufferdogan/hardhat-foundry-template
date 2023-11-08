@@ -10,7 +10,7 @@
     "test": "hardhat test",
     "fcoverage": "rm -r coverage || true && rm -r coverage.json || true && forge coverage --report lcov",
     "hcoverage": "rm lcov.info || true && hardhat coverage",
-    "prepare": "foundryup && forge install && forge install foundry-rs/forge-std && forge install OpenZeppelin/openzeppelin-contracts"
+    "prepare": "foundryup && forge install && forge install https://github.com/foundry-rs/forge-std && forge install https://github.com/OpenZeppelin/openzeppelin-contracts"
   },
   "license": "Apache-2.0",
   "devDependencies": {
